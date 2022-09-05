@@ -11,3 +11,11 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 }
+
+/*GENERAL GAMEBOARD STYLE*/
+#game-board div > h1 {
+    margin-top: 1rem;
+    font-size: 3rem;
+    color:rgba(195, 164, 113, 1);
+    text-align: center;
+}
