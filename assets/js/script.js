@@ -16,6 +16,8 @@ let gameStarted = false;
 const gameBoard = document.getElementById('game-board');
 const gameArea = document.getElementById('game-area');
 
+const gameCards = document.getElementsByClassName('game-card');
+
 const guess = document.getElementById('guess');
 const fail = document.getElementById('fail');
 
@@ -40,14 +42,26 @@ function generateCards(){
         card.classList.add('game-card');
         gameArea.appendChild(card);
     }
-    
+    randomFigures();
 }
-
-
+generateCards();
 
 /*FUNCTION TO RANDOMIZE FIGURES*/
 function randomFigures(){
+    for (const cardFigure of cardFigures){
+        let cards = 0;
+        while(cards < 2){
+            let randomCard = Math.floor(Math.random() * gameCards.length);
+            let card = gameCards[randomCard];
+            if(!card.style.backgroundImage){
+                card.style.backgroundImage = `url(${cardFigure})`;
+                cards ++;
+            }
+        }
+    }
 }
+
+
 
 function runGame(){
 }
