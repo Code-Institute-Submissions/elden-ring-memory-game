@@ -34,6 +34,35 @@ function generateCards(){
     }
     
 }
-generateCards();
+
+
+
+/*FUNCTION TO RANDOMIZE FIGURES*/
+function randomFigures(){
+}
+
+function runGame(){
+}
+
+function flipCard(){
+
+}
+
+function checkScore(){
+}
+
+function updateScoreboard(){
+}
+
+function resetGame(){
+}
+
+function hideRules(){
+}
+
+
+
+
+
 
 
