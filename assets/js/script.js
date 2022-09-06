@@ -1,7 +1,15 @@
 /*THE CARDS WILL BE GENERATED FROM AN ARRAY OF FIGURES
 */
 
-const cardFigures = [];
+const cardFigures = [
+    new URL("../images/cards/alexander.jpg", import.meta.url),
+    new URL("../images/cards/malenia-blade-of-miquella.jpg", import.meta.url),
+    new URL("../images/cards/melina.jpg", import.meta.url),
+    new URL("../images/cards/queen-marika.jpg", import.meta.url),
+    new URL("../images/cards/ranni.jpg", import.meta.url),
+];
+
+let gameStarted = false;
 
 /*THE ELEMENTS WILL BE SELECTED GLOBALLY IN ORDER TO BE RECYCLED*/
 
