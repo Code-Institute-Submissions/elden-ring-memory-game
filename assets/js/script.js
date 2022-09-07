@@ -94,6 +94,14 @@ function hideRules(){
 }
 
 
+startButton.addEventListener('click', function(){
+    hideRules();
+    runGame();
+    startButton.remove();
+});
+
+generateCards();
+displayRules();
 
 
 
