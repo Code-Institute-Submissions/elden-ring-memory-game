@@ -27,6 +27,10 @@ const startButton = document.getElementById('start');
 const showRulesButton = document.getElementById('show-rules');
 const hideRulesButton = document.getElementById('hide-rules');
 
+
+/** @type {HTMLDialogElement} */
+const rulesModal = document.getElementById('rules');
+
 /*FUNCTIONS */
 
 function generateCards(){
@@ -79,7 +83,14 @@ function updateScoreboard(){
 function resetGame(){
 }
 
+function displayRules(){
+    showRulesButton.addEventListener('click', displayRules);
+    rulesModal.showModal();
+}
+
 function hideRules(){
+    hideRulesButton.addEventListener('click', hideRules);
+    rulesModal.close();
 }
 
 
