@@ -94,12 +94,10 @@ function resetGame(){
 }
 
 function displayRules(){
-    showRulesButton.addEventListener('click', displayRules);
     rulesModal.showModal();
 }
 
 function hideRules(){
-    hideRulesButton.addEventListener('click', hideRules);
     rulesModal.close();
 }
 
@@ -109,6 +107,9 @@ startButton.addEventListener('click', function(){
     runGame();
     startButton.remove();
 });
+
+hideRulesButton.addEventListener('click', hideRules);
+showRulesButton.addEventListener('click', displayRules);
 
 generateCards();
 displayRules();
