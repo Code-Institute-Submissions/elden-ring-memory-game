@@ -89,4 +89,21 @@ dialog::backdrop{
     background: rgba(0,0,0, 0.5);
 }
 
+/*SCORE STYLE AREA*/
+#score-board{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.scores{
+    margin-top: 1rem;
+    font-size: 2.5rem;
+    color:rgba(195, 164, 113, 1);
+    text-align: center;
+
+}
+
+
+
 
