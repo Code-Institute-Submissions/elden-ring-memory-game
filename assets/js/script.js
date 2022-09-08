@@ -12,7 +12,6 @@ const cardFigures = [
 let gameStarted = false;
 
 /*THE ELEMENTS WILL BE SELECTED GLOBALLY IN ORDER TO BE RECYCLED*/
-
 const gameBoard = document.getElementById('game-board');
 const gameArea = document.getElementById('game-area');
 
@@ -31,10 +30,27 @@ const hideRulesButton = document.getElementById('hide-rules');
 /** @type {HTMLDialogElement} */
 const rulesModal = document.getElementById('rules');
 
+/*FUNCTION TO CREATE A SINGLE CARD*/
+function createCard(){
+    const card = document.createElement('button');
+    card.classList.add('game-card', 'covered');
+
+    card.addEventListener('click', function(){
+        card.classList.add('flip');
+        card.classList.toggle('covered');
+        checkPickedCards();
+    })
+
+    card.addEventListener('transitionend', function (){
+        card.classList.remove('flip');
+    })
+
+    return card;
+
+}
+
 /*FUNCTIONS */
-
 function generateCards(){
-
     const numOfCards = cardFigures.length * 2;
     const columns = (cardFigures.length) % 6;
     const rows = numOfCards / columns;
@@ -42,13 +58,13 @@ function generateCards(){
     gameArea.style.setProperty('--columns', columns);
     gameArea.style.setProperty('--rows', rows);
     for(let i = 0; i < numOfCards; i++){
-        const card = document.createElement('button');
-        card.classList.add('game-card');
+        const card = createCard();
+
         gameArea.appendChild(card);
     }
     randomFigures();
 }
-generateCards();
+
 
 /*FUNCTION TO RANDOMIZE FIGURES*/
 function randomFigures(){
@@ -65,13 +81,7 @@ function randomFigures(){
     }
 }
 
-
-
 function runGame(){
-}
-
-function flipCard(){
-
 }
 
 function checkScore(){
@@ -102,8 +112,4 @@ startButton.addEventListener('click', function(){
 
 generateCards();
 displayRules();
-
-
-
-
 
