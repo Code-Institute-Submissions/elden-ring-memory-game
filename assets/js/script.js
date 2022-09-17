@@ -1,6 +1,4 @@
-/*THE CARDS WILL BE GENERATED FROM AN ARRAY OF FIGURES
-*/
-
+/* The cards will be generated from an array of figures */
 const cardFigures = [
     new URL("../images/cards/alexander.jpg", import.meta.url),
     new URL("../images/cards/malenia-blade-of-miquella.jpg", import.meta.url),
@@ -11,7 +9,13 @@ const cardFigures = [
 
 let gameStarted = false;
 
-/*THE ELEMENTS WILL BE SELECTED GLOBALLY IN ORDER TO BE RECYCLED*/
+/* Object to calculate and store the scores */
+const scores = {
+    guess: 0,
+    fail: 0,
+};
+
+/* The elements will be selected globally in order to be recycled */
 const gameBoard = document.getElementById('game-board');
 const gameArea = document.getElementById('game-area');
 
@@ -26,11 +30,10 @@ const startButton = document.getElementById('start');
 const showRulesButton = document.getElementById('show-rules');
 const hideRulesButton = document.getElementById('hide-rules');
 
-
 /** @type {HTMLDialogElement} */
 const rulesModal = document.getElementById('rules');
 
-/*FUNCTION TO CREATE A SINGLE CARD*/
+/* Function to create a single card */
 function createCard(){
     const card = document.createElement('button');
     card.classList.add('game-card', 'covered');
@@ -46,10 +49,8 @@ function createCard(){
     })
 
     return card;
-
 }
 
-/*FUNCTIONS */
 function generateCards(){
     const numOfCards = cardFigures.length * 2;
     const columns = (cardFigures.length) % 6;
@@ -65,8 +66,7 @@ function generateCards(){
     randomFigures();
 }
 
-
-/*FUNCTION TO RANDOMIZE FIGURES*/
+/* Function to randomize figures */
 function randomFigures(){
     for (const cardFigure of cardFigures){
         let cards = 0;
@@ -84,7 +84,44 @@ function randomFigures(){
 function runGame(){
 }
 
-function checkScore(){
+/* Function to check if the first picked card matches with the second one */
+function checkPickedCards(){
+    const pickedCards = document.querySelectorAll('.game-card:not(.covered):not(.guessed)');
+    if(pickedCards.length !== 2){
+        return null;
+    }
+
+    const guessed = checkScore(pickedCards)
+
+    for(const card of pickedCards){
+        if(!guessed){
+            setTimeout(()=> card.classList.add('flip', 'covered'), 650);
+        }
+        else{
+            card.classList.add('guessed');
+        }
+
+    }
+
+    return guessed;
+}
+
+/* Function to check if the score of the picked cards from the array */
+function checkScore(pickedCards){
+    const guessed = pickedCards[0].style.backgroundImage === pickedCards[1].style.backgroundImage;
+
+    if(guessed){
+        scores.guess ++;
+        //TODO check if win
+    }
+    else{
+        scores.fail ++;
+        //TODO check if lose
+    }
+
+    updateScoreboard()
+
+    return guessed
 }
 
 function updateScoreboard(){
