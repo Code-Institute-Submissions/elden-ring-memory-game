@@ -127,6 +127,8 @@ function checkScore(pickedCards){
 }
 
 function updateScoreboard(){
+    guess.textContent = scores.guess;
+    fail.textContent = scores.fail;
 }
 
 function resetGame(){
