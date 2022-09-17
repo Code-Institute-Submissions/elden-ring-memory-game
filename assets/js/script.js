@@ -39,9 +39,11 @@ function createCard(){
     card.classList.add('game-card', 'covered');
 
     card.addEventListener('click', function(){
-        card.classList.add('flip');
-        card.classList.toggle('covered');
-        checkPickedCards();
+        if(!card.classList.contains('guessed') && card.classList.contains('covered')){
+            card.classList.add('flip');
+            card.classList.toggle('covered');
+            checkPickedCards();
+        }
     })
 
     card.addEventListener('transitionend', function (){
