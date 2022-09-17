@@ -132,6 +132,13 @@ function updateScoreboard(){
 }
 
 function resetGame(){
+    gameArea.innerHTML = "";
+
+    scores.guess = 0;
+    scores.fail = 0;
+    updateScoreboard()
+
+    generateCards()
 }
 
 function displayRules(){
@@ -142,6 +149,7 @@ function hideRules(){
     rulesModal.close();
 }
 
+resetButton.addEventListener('click', resetGame);
 
 startButton.addEventListener('click', function(){
     hideRules();
@@ -152,6 +160,5 @@ startButton.addEventListener('click', function(){
 hideRulesButton.addEventListener('click', hideRules);
 showRulesButton.addEventListener('click', displayRules);
 
-generateCards();
+resetGame();
 displayRules();
-
