@@ -10,13 +10,12 @@ body {
     background-image: url('../images/background.jpg');
     background-repeat: no-repeat;
     background-position: center;
+    font-family: 'MedievalSharp', 'sans-serif', cursive;
 }
 
 /*GENERAL GAMEBOARD STYLE*/
-
 #game-board{
     padding: 3rem;
-
 }
 
 #game-board div > h1 {
@@ -108,6 +107,7 @@ body {
 
 /*CONTROL AREA STYLE*/
 .btn{
+    font-family: inherit;
     font-size: 25pt;
     margin: 1rem;
     padding: 0.50rem;
@@ -133,6 +133,12 @@ dialog{
     margin:5rem auto;
     background-color: rgba(255,255,255, 0.5);
     color:rgba(195, 164, 113, 1);
+}
+
+#game-rules{
+    font-size: 2rem;
+    color: black;
+    text-align: left;
 
 }
 
@@ -154,9 +160,4 @@ dialog::backdrop{
     font-size: 2.5rem;
     color:rgba(195, 164, 113, 1);
     text-align: center;
-
 }
-
-
-
-
