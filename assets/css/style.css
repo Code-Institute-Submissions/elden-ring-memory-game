@@ -40,7 +40,27 @@ body {
     justify-items: center;
     align-items: center;
     min-height: 100vh;
+    position: relative;
+}
 
+.game-over{
+    position: absolute;
+    inset: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    z-index: 100;
+    font-size: 3rem;
+}
+
+.game-over.win{
+    color:rgba(195, 164, 113, 1);
+}
+
+.game-over.lose{
+    color: darkred;
 }
 
 /*CARD STYLE*/

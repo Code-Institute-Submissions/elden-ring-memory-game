@@ -118,16 +118,28 @@ function checkScore(pickedCards){
 
     const guessed = pickedCards[0].style.backgroundImage === pickedCards[1].style.backgroundImage;
 
+    let gameFinished = false;
+    let gameStatus;
+
     if(guessed){
         scores.guess ++;
-        //TODO check if win
+        if(scores.guess === cardFigures.length){
+            gameFinished = true;
+            gameStatus = true;
+        }
     }
     else{
         scores.fail ++;
-        //TODO check if lose
+        if(scores.fail === cardFigures.length){
+            gameFinished = true;
+            gameStatus = false;
+        }
     }
 
-    updateScoreboard()
+    updateScoreboard();
+    if(gameFinished){
+        return showGameOverScreen(gameStatus);
+    }
 
     return guessed
 }
@@ -147,6 +159,23 @@ function resetGame(){
     generateCards();
 
     gameStarted = true;
+}
+
+function showGameOverScreen(playerWon){
+    gameStarted = false;
+
+    const gameOverScreen = document.createElement('div');
+    const gameOverText = document.createElement('h2');
+
+    gameOverText.textContent =  playerWon ? 'You win' : 'You died';
+
+    gameOverScreen.classList.add(
+        'game-over',
+        playerWon ? 'win' : 'lose'
+    );
+
+    gameOverScreen.appendChild(gameOverText);
+    gameArea.appendChild(gameOverScreen);
 }
 
 function displayRules(){
