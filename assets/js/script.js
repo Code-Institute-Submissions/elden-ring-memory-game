@@ -16,7 +16,6 @@ const scores = {
 };
 
 /* The elements will be selected globally in order to be recycled */
-const gameBoard = document.getElementById('game-board');
 const gameArea = document.getElementById('game-area');
 
 const gameCards = document.getElementsByClassName('game-card');
@@ -39,6 +38,10 @@ function createCard(){
     card.classList.add('game-card', 'covered');
 
     card.addEventListener('click', function(){
+        if(!gameStarted){
+            return false;
+        }
+
         if(!card.classList.contains('guessed') && card.classList.contains('covered')){
             card.classList.add('flip');
             card.classList.toggle('covered');
@@ -83,11 +86,12 @@ function randomFigures(){
     }
 }
 
-function runGame(){
-}
-
 /* Function to check if the first picked card matches with the second one */
 function checkPickedCards(){
+    if(!gameStarted){
+        return false;
+    }
+
     const pickedCards = document.querySelectorAll('.game-card:not(.covered):not(.guessed)');
     if(pickedCards.length !== 2){
         return null;
@@ -102,14 +106,16 @@ function checkPickedCards(){
         else{
             card.classList.add('guessed');
         }
-
     }
-
     return guessed;
 }
 
 /* Function to check if the score of the picked cards from the array */
 function checkScore(pickedCards){
+    if(!gameStarted){
+        return false;
+    }
+
     const guessed = pickedCards[0].style.backgroundImage === pickedCards[1].style.backgroundImage;
 
     if(guessed){
@@ -136,9 +142,11 @@ function resetGame(){
 
     scores.guess = 0;
     scores.fail = 0;
-    updateScoreboard()
 
-    generateCards()
+    updateScoreboard();
+    generateCards();
+
+    gameStarted = true;
 }
 
 function displayRules(){
@@ -153,7 +161,6 @@ resetButton.addEventListener('click', resetGame);
 
 startButton.addEventListener('click', function(){
     hideRules();
-    runGame();
     startButton.remove();
 });
 
