@@ -5,6 +5,8 @@ const cardFigures = [
     new URL("../images/cards/melina.jpg", import.meta.url),
     new URL("../images/cards/queen-marika.jpg", import.meta.url),
     new URL("../images/cards/ranni.jpg", import.meta.url),
+    new URL("../images/cards/vulcano-manor.jpg", import.meta.url),
+    new URL("../images/cards/radagon.jpg", import.meta.url),
 ];
 
 let gameStarted = false;
