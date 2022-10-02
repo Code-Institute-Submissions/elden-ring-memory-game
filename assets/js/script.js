@@ -9,6 +9,10 @@ const cardFigures = [
     new URL("../images/cards/radagon.jpg", import.meta.url),
 ];
 
+const mediaQueries = {
+    toMobileL: matchMedia('screen and (max-width: 1024px)'),
+}
+
 let gameStarted = false;
 
 /* Object to calculate and store the scores */
@@ -60,6 +64,19 @@ function createCard(){
     return card;
 }
 
+function updateFrame() {
+    const numOfCards = cardFigures.length * 2;
+
+    const cols = Math.min(5, cardFigures.length);
+    const minCols = (cardFigures.length % 2 === 0) ? 2 : 3;
+
+    const columns = mediaQueries.toMobileL.matches ? 2 : Math.max(minCols, cols);
+    const rows = numOfCards / columns;
+
+    gameArea.style.setProperty('--columns', columns.toString());
+    gameArea.style.setProperty('--rows', rows.toString());
+}
+
 function generateCards(){
     const numOfCards = cardFigures.length * 2;
     const columns = (cardFigures.length) % 6;
@@ -81,7 +98,9 @@ function randomFigures(){
         let cards = 0;
         while(cards < 2){
             let randomCard = Math.floor(Math.random() * gameCards.length);
+
             let card = gameCards[randomCard];
+
             if(!card.style.backgroundImage){
                 card.style.backgroundImage = `url(${cardFigure})`;
                 cards ++;
@@ -160,6 +179,8 @@ function resetGame(){
     scores.fail = 0;
 
     updateScoreboard();
+    updateFrame();
+
     generateCards();
 
     gameStarted = true;
@@ -199,6 +220,8 @@ startButton.addEventListener('click', function(){
 
 hideRulesButton.addEventListener('click', hideRules);
 showRulesButton.addEventListener('click', displayRules);
+
+window.addEventListener('resize', updateFrame);
 
 resetGame();
 displayRules();

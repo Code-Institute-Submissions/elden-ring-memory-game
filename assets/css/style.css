@@ -19,6 +19,10 @@ body {
     font-family: 'MedievalSharp', 'sans-serif', cursive;
 }
 
+button {
+    user-select: none;
+}
+
 /*GENERAL GAMEBOARD STYLE*/
 #game-board{
     padding: 3rem;
@@ -40,6 +44,7 @@ body {
     width: 100%;
     margin: 2rem auto;
     display: grid;
+    gap: 0.5rem;
     grid-template-columns: repeat(var(--columns), 1fr);
     grid-template-rows: repeat(var(--rows), 1fr);
     justify-items: center;
@@ -145,7 +150,6 @@ dialog{
     font-size: 2rem;
     color: black;
     text-align: left;
-
 }
 
 dialog::backdrop{
