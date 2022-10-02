@@ -5,8 +5,14 @@
     box-sizing: border-box;
 }
 
+html,
 body {
     background-color: black;
+    font-family: 'MedievalSharp', 'sans-serif', cursive;
+    min-height: 100vh;
+}
+
+body {
     background-image: url('../images/background.jpg');
     background-repeat: no-repeat;
     background-position: center;
