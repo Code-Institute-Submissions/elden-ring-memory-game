@@ -15,6 +15,8 @@ let gameStarted = false;
 const scores = {
     guess: 0,
     fail: 0,
+    maxGuess: cardFigures.length,
+    maxFail: Math.max(3, Math.trunc(cardFigures.length * 1.5)),
 };
 
 /* The elements will be selected globally in order to be recycled */
@@ -125,14 +127,14 @@ function checkScore(pickedCards){
 
     if(guessed){
         scores.guess ++;
-        if(scores.guess === cardFigures.length){
+        if(scores.guess === scores.maxGuess){
             gameFinished = true;
             gameStatus = true;
         }
     }
     else{
         scores.fail ++;
-        if(scores.fail === cardFigures.length){
+        if(scores.fail === scores.maxFail){
             gameFinished = true;
             gameStatus = false;
         }
