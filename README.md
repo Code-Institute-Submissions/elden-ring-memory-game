@@ -1,108 +1,150 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Elden Ring Memory Game
 
-Welcome USER_NAME,
+The Elden Ring memory game is inspired by its original version of the game called "_**Elden Ring**_" developed from "**_From Software_**", therefore all rights go to the video game development company. The concept of this game is designed for children but fun for all ages.
+The game is composed of cards which make up the game-board where the player will play.
+Using cognitive memory skills, the player flips the cards until all the matches are found.
+Being primarily inspired by the games from "**_From Software_**", I personalized the memory by adding the chance to lose the game when a certain amount of fails is reached.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
 
-## Gitpod Reminders
+## Features
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+- __Fourteen clickable cards__
 
-`python3 -m http.server`
+  - The square game-board is made up of a total of 14 cards that will flip 180° when clicked.
+  - The front face of each card is representing a character in the official "_**Elden Ring**_" game.
+  - The back face of all cards is the same, depicting the logo of the original game "_**Elden Ring**_". 
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+![FrontFace](assets/images/docs/card_front.png)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: _Make Public_,
+If all matches are made, the game board will display that the player has won the game.
+The "_**Reset**_" button is always clickable at anytime during the game, as well as the "_**Rules**_" button.
 
-Another blue button should appear to click: _Open Browser_.
+![PartialPlay](assets/images/docs/partial_play.png)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
 
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+If no match is found, both cards will flip back over and remain clickable for future guesses, also if the player keeps guessing the wrong card, the game will end, and the game board will display that the player has lost the game.
+![PartialPlayDefeat](assets/images/docs/partial_play_defeat.png)
 
 ---
 
-Happy coding!
+- __Two clickable buttons__
+
+  - "_**Reset**_" Button - The reset button will flip all cards back over so the back face / cover of the card is showing. The cards will be then randomized and the two counters will be reset to zero.
+  - "_**Rules**_" Button - When the rules button is clicked, a responsive message will appear with the rules and the benefits of the game. To return to the game-board and play the game, the player will need to click the "_**Hide**_" button.
+
+![ResetRulesButtons](assets/images/docs/reset_rules_button.png)
+
+![Rules](assets/images/docs/rules.png)
+
+
+### Features Left to Implement
+
+- Adding some sound effects to each card when the card is flipped and there is a match and when there is not, plus a background music to indicate that the game has started.
+
+- Animation effect when the player wins / lose.
+
+- To further increase difficulty, levels could be incorporated to encourage older or more advanced users to play. By adding two or four more pairs, the game could take on a higher skill level.
+
+- A timer could also clock the player's score, encouraging the player to beat their time in each round.
+
+- Incorporating a "high scores" page would increase interest in the game.
+
+
+### Bugs Encountered and Improvements
+
+- To my knowledge there are no major unfixed bugs. The game run and does exactly what it is supposed to do.
+- Locating other bugs work in progress ...
+
+
+## Testing
+
+- work in progress ...
+---
+### Validator Testing
+
+#### HTML - test result
+- No errors were found when the code was passed through the official [W3C validator](https://validator.w3.org/). This was tested individually on each page.
+
+![ValidatorHTML](assets/images/docs/html_test.jpg)
+
+---
+
+#### CSS - test result
+- The only error found during the validation, has to do with the fact that I used CSS variables in my code. Overall there are no mayor warnings when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/)
+
+![ValidatorCSS](assets/images/docs/css_test.jpg)
+
+---
+
+
+#### JavaScript - test result
+  - No errors were found in the JavaScript file when it was run through the [(JShint) validator](https://jshint.com/) but there were warnings, an excerpt of which is shown in the first screenshot below.
+
+![ValidatorWarningJS](assets/images/docs/js_warnings.png)
+
+
+
+---
+
+## Deployment
+
+I deployed this website to GitHub pages on the GitHub hosting platform following the steps below:
+
+- Once in my personal GitHub repository for this project, I clicked the Settings button. From there I clicked "**Pages**" from the left side menu.
+- Next under "**_Source_**" I selected the main branch,  refreshed the page and a link to the live site was provided, indicating successful deployment.
+
+![Deployment](assets/images/docs/github_deployment_mockup.jpeg)
+
+The live link can be found here - https://sebhd1.github.io/elden-ring-memory-game/
+
+### To Fork the Repository
+
+To make a copy or ‘fork’ the repository
+
+- Log into GitHub and locate repository
+- On the right hand side of the page select the ‘fork’ option to create and copy of the original
+
+![Forking Process Image](assets/images/docs/fork_image.jpg)
+
+### To create a Local Clone
+
+1. under the repository name, click on the ‘code’ tab
+2. in the clone box, HTTPS tab, click on the clipboard icon
+3. in your IDE open GitBash
+4. Changed the current working directory to the location you want the cloned directory to be made
+5. Type ‘git clone’ and then paste the URL copied from GitHub
+6. press enter and the local clone will be created
+
+![Clonging Process image](assets/images/docs/clone_image.jpg)
+
+---
+## External tools
+
+### ParcelJs
+I used parceljs to run my project locally. 
+More instructions about parcel [here](https://parceljs.org/).
+
+---
+## Credits
+
+### Content
+
+- The Layout inspiration for the game and the colors pattern were taken from [eldenring.wiki.fextralife.com](https://eldenring.wiki.fextralife.com/Elden+Ring+Wiki)
+
+- I used fonts from [Google Fonts](https://fonts.google.com/) for this project.
+
+- I used Stack Overflow for general troubleshooting and issues with grid spacing.
+
+- Information for the landing page overlay, "Benefits of the game" was taken from the [Walnut Montessori-Preschool Academy](https://www.walnutmontessori-preschool.com/why-kids-should-play-memory) website.
+
+- Feedback and comments from the reviewer of my PP1 were taken into account for this project when running tests and identifying and fixing bugs.
+
+- The pictures used for the cards were taken from the official Elden Ring Wiki - [eldenring.wiki.fextralife.com](https://eldenring.wiki.fextralife.com/Elden+Ring+Wiki)
+
+### Acknowledgements
+This website was executed and completed as a portfolio 2 Project for the full stack diploma at [Code Institute](https://codeinstitute.net/).
+
+Sebastiano Ballotta, 2022.
