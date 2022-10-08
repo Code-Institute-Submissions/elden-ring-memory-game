@@ -63,10 +63,12 @@ button {
 
 .game-over.win {
     color:rgba(195, 164, 113, 1);
+    text-align: center;
 }
 
 .game-over.lose{
     color: darkred;
+    text-align: center;
 }
 
 /*CARD STYLE*/
