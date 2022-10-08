@@ -53,15 +53,34 @@ If no match is found, both cards will flip back over and remain clickable for fu
 - Incorporating a "high scores" page would increase interest in the game.
 
 
-### Bugs Encountered and Improvements
+### Bugs Encountered
 
 - To my knowledge there are no major unfixed bugs. The game run and does exactly what it is supposed to do.
-- Locating other bugs work in progress ...
+- I initially encountered a problem in showing the images on GitHub pages, although they were perfectly displayed on localhost, they still couldn't be seen and the cards were left totally blank.
+I then address the problem just by playing with the file path inside my array of cards created in JavaScript, and it worked.
+
+
+#### Unresolved issue
+
+- When trying to shrink the game window manually to other dimensions, the design might look like broken.
+In order to resolve this problem, simply click the - "_**Reset**_" button on the bottom of the page.
+If the problem still persists, refresh the page at the desired responsive dimension. 
+
 
 
 ## Testing
+- The website itself was tested on Chrome, Safari and Firefox web browsers using a laptop computer. It was also designed to be responsive on a range of devices, using the Responsive setting on Chrome DevTools to simulate sizes.
 
-- work in progress ...
+- To complete my testing phase, I ran it through Lighthouse in Chrome DevTools, both desktop, and mobile versions.
+- Due to some Google Chrome extensions, the tests were performed in Incognito Mode.
+  The results are below:
+
+Homepage (desktop)
+![Lighthouse](assets/images/docs/lighthouse_test_desktop.jpg)
+
+
+Homepage (mobile)
+![Lighthouse](assets/images/docs/lighthouse_test_mobile.jpg)
 ---
 ### Validator Testing
 
@@ -84,7 +103,6 @@ If no match is found, both cards will flip back over and remain clickable for fu
   - No errors were found in the JavaScript file when it was run through the [(JShint) validator](https://jshint.com/) but there were warnings, an excerpt of which is shown in the first screenshot below.
 
 ![ValidatorWarningJS](assets/images/docs/js_warnings.png)
-
 
 
 ---
@@ -121,12 +139,6 @@ To make a copy or ‘fork’ the repository
 ![Clonging Process image](assets/images/docs/clone_image.jpg)
 
 ---
-## External tools
-
-### ParcelJs
-I used parceljs to run my project locally. 
-More instructions about parcel [here](https://parceljs.org/).
-
 ---
 ## Credits
 
