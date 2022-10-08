@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/sebhd1/elden-ring-memory-game/issues"
   },
-  "homepage": "https://github.com/sebhd1/elden-ring-memory-game#readme",
-  "devDependencies": {
-    "parcel": "^2.7.0"
-  }
+  "homepage": "https://github.com/sebhd1/elden-ring-memory-game#readme"
 }

@@ -16,7 +16,7 @@ body {
     background-image: url('../images/background.jpg');
     background-repeat: no-repeat;
     background-position: center;
-    font-family: 'MedievalSharp', 'sans-serif', cursive;
+    background-size: cover;
 }
 
 button {
@@ -24,19 +24,15 @@ button {
 }
 
 /*GENERAL GAMEBOARD STYLE*/
-#game-board{
-    padding: 3rem;
-}
-
 #game-board div > h1 {
-    margin-top: 1rem;
+    padding: 1rem;
     font-size: 3rem;
     color:rgba(195, 164, 113, 1);
     text-align: center;
 }
 
-/*THE AREA WHERE THE USER WILL PLAY*/
-#game-area{
+/*THE AREA WHERE THE USER WILL PLAY - GENERAL STYLE*/
+#game-area {
     --columns:5;
     --rows:1;
     background-color: rgba(255,255,255, 0.20);
@@ -53,7 +49,7 @@ button {
     position: relative;
 }
 
-.game-over{
+.game-over {
     position: absolute;
     inset: 0;
     background-color: black;
@@ -65,7 +61,7 @@ button {
     font-size: 3rem;
 }
 
-.game-over.win{
+.game-over.win {
     color:rgba(195, 164, 113, 1);
 }
 
@@ -74,21 +70,22 @@ button {
 }
 
 /*CARD STYLE*/
-.game-card{
+.game-card {
     position: relative;
     display: inline-block;
-    border: 0.35rem solid rgba(195, 164, 113, 0.6);
-    border-radius: 0.2rem;
-    width: 60%;
-    height: 80%;
+    border: 0.25rem solid rgba(195, 164, 113, 0.6);
+    aspect-ratio: 1 / 2;
+    height: 100%;
+    border-radius: 0.1rem;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     transform: rotateY(-180deg);
+    justify-items: stretch;
 }
 
-
-.game-card::before{
+.game-card:before,
+.game-card::before {
     opacity: 0;
     transition: opacity 0.25s 0.1s ease-in-out;
     position: absolute;
@@ -104,12 +101,13 @@ button {
     transform:rotateY(180deg);
 }
 
-.game-card.covered::before{
+.game-card.covered:before,
+.game-card.covered::before {
     opacity: 1;
 }
 
 /*STYLE FOR FLIPPING CARD*/
-.game-card.flip{
+.game-card.flip {
     transform-style: preserve-3d;
     transition: all 0.5s ease-in-out;
     transform: rotateY(180deg);
@@ -117,7 +115,7 @@ button {
 
 
 /*CONTROL AREA STYLE*/
-.btn{
+.btn {
     font-family: inherit;
     font-size: 25pt;
     margin: 1rem;
@@ -126,17 +124,17 @@ button {
     border-image: linear-gradient(-100deg, #c3a471, #000000) 1;
     border-radius: 0.1rem;
     background-color: rgba(255,255,255, 0.2);
-    color:rgba(195, 164, 113, 0.5);
+    color:rgba(195, 164, 113, 1);
 }
 
-.btn:hover{
-    background-color: rgba(255,255,255, 0.5);
+.btn:hover {
+    background-color: rgba(255,255,255, 0.8);
     color:rgba(195, 164, 113, 1);
 }
 
 
-/*MODAL STYLE*/
-dialog{
+/*MODAL WINDOW STYLE*/
+dialog {
     position: fixed;
     inset: 0;
     width: 100%;
@@ -146,28 +144,77 @@ dialog{
     color:rgba(195, 164, 113, 1);
 }
 
-#game-rules{
+#game-rules {
     font-size: 2rem;
     color: black;
     text-align: left;
 }
 
-dialog::backdrop{
+dialog::backdrop {
     width: 100%;
     height: 100%;
     background: rgba(0,0,0, 0.5);
 }
 
 /*SCORE STYLE AREA*/
-#score-board{
+#score-board {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.scores{
+.scores {
     margin-top: 1rem;
     font-size: 2.5rem;
     color:rgba(195, 164, 113, 1);
     text-align: center;
+}
+
+
+@media screen and (max-width: 1024px) {
+    #game-area {
+        --columns: 2;
+        grid-template-rows: repeat(var(--rows), fit-content);
+        min-height: calc(50vh * var(--rows));
+    }
+
+    .game-card{
+        width: 100%;
+        justify-self: center;
+    }
+
+    /*CARD STYLE*/
+    .game-card:before,
+    .game-card::before {
+        opacity: 0;
+        transition: opacity 0.25s 0.1s ease-in-out;
+        position: absolute;
+        inset: 0; /*TOP, RIGHT, LEFT, BOTTOM*/
+        content: '';
+        background-color: black;
+        background-image: url('../images/background-card.jpg');
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        transform:rotateY(180deg);
+    }
+
+    /*MODAL STYLE*/
+    dialog {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 90%;
+        margin:5rem auto;
+        background-color: rgba(255,255,255, 0.5);
+        color:rgba(195, 164, 113, 1);
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .game-card{
+        justify-items: stretch;
+    }
 }

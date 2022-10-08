@@ -1,12 +1,12 @@
 /* The cards will be generated from an array of figures */
 const cardFigures = [
-    new URL("../images/cards/alexander.jpg", import.meta.url),
-    new URL("../images/cards/malenia-blade-of-miquella.jpg", import.meta.url),
-    new URL("../images/cards/melina.jpg", import.meta.url),
-    new URL("../images/cards/queen-marika.jpg", import.meta.url),
-    new URL("../images/cards/ranni.jpg", import.meta.url),
-    new URL("../images/cards/vulcano-manor.jpg", import.meta.url),
-    new URL("../images/cards/radagon.jpg", import.meta.url),
+    "../images/cards/alexander.jpg",
+    "../images/cards/malenia-blade-of-miquella.jpg",
+    "../images/cards/melina.jpg",
+    "../images/cards/queen-marika.jpg",
+    "../images/cards/ranni.jpg",
+    "../images/cards/vulcano-manor.jpg",
+    "../images/cards/radagon.jpg",
 ];
 
 const mediaQueries = {
@@ -79,11 +79,7 @@ function updateFrame() {
 
 function generateCards(){
     const numOfCards = cardFigures.length * 2;
-    const columns = (cardFigures.length) % 6;
-    const rows = numOfCards / columns;
 
-    gameArea.style.setProperty('--columns', columns);
-    gameArea.style.setProperty('--rows', rows);
     for(let i = 0; i < numOfCards; i++){
         const card = createCard();
 
@@ -225,3 +221,6 @@ window.addEventListener('resize', updateFrame);
 
 resetGame();
 displayRules();
+
+
+
