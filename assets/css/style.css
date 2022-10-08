@@ -23,7 +23,6 @@ button {
     user-select: none;
 }
 
-/*GENERAL GAMEBOARD STYLE*/
 #game-board div > h1 {
     padding: 1rem;
     font-size: 3rem;
@@ -172,7 +171,7 @@ dialog::backdrop {
     text-align: center;
 }
 
-
+/*STARTING MEDIA QUERIES FROM  MAX WIDTH 1024*/
 @media screen and (max-width: 1024px) {
     #game-area {
         --columns: 2;
@@ -185,7 +184,6 @@ dialog::backdrop {
         justify-self: center;
     }
 
-    /*CARD STYLE*/
     .game-card:before,
     .game-card::before {
         opacity: 0;

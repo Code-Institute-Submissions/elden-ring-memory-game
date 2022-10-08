@@ -1,4 +1,4 @@
-/* The cards will be generated from an array of figures */
+/* THE_CARDS_WILL_BE_GENERATED_FROM_AN_ARRAY_OF_FIGURES */
 const cardFigures = [
     "./assets/images/cards/alexander.jpg",
     "./assets/images/cards/melina.jpg",
@@ -14,7 +14,7 @@ const mediaQueries = {
 
 let gameStarted = false;
 
-/* Object to calculate and store the scores */
+/* OBJECT_TO_CALCULATE_AND_STORE_THE_SCORES */
 const scores = {
     guess: 0,
     fail: 0,
@@ -22,7 +22,7 @@ const scores = {
     maxFail: Math.max(3, Math.trunc(cardFigures.length * 1.5)),
 };
 
-/* The elements will be selected globally in order to be recycled */
+/* THE_ELEMENTS_WILL_BE_SELECTED_GLOBALLY_IN_ORDER_TO_BE_RECYCLED */
 const gameArea = document.getElementById('game-area');
 
 const gameCards = document.getElementsByClassName('game-card');
@@ -39,7 +39,7 @@ const hideRulesButton = document.getElementById('hide-rules');
 /** @type {HTMLDialogElement} */
 const rulesModal = document.getElementById('rules');
 
-/* Function to create a single card */
+/* FUNCTION_TO_CREATE_A_SINGLE_CARD */
 function createCard(){
     const card = document.createElement('button');
     card.classList.add('game-card', 'covered');
@@ -63,6 +63,7 @@ function createCard(){
     return card;
 }
 
+/*FUNCTION_TO_UPDATE_THE_GAME_AREA */
 function updateFrame() {
     const numOfCards = cardFigures.length * 2;
 
@@ -76,6 +77,7 @@ function updateFrame() {
     gameArea.style.setProperty('--rows', rows.toString());
 }
 
+/*FUNCTIONS_TO_GENERATE_ALWAYS_TWO_IDENTICAL_CARDS*/
 function generateCards(){
     const numOfCards = cardFigures.length * 2;
 
@@ -87,7 +89,7 @@ function generateCards(){
     randomFigures();
 }
 
-/* Function to randomize figures */
+/* FUNCTION_TO_RANDOMIZE_FIGURES */
 function randomFigures(){
     for (const cardFigure of cardFigures){
         let cards = 0;
@@ -104,7 +106,7 @@ function randomFigures(){
     }
 }
 
-/* Function to check if the first picked card matches with the second one */
+/* FUNCTION_TO_CHECK_IF_THE_FIRST_PICKED_CARD_MATCHES_WITH_THE_SECOND_ONE */
 function checkPickedCards(){
     if(!gameStarted){
         return false;
@@ -128,7 +130,7 @@ function checkPickedCards(){
     return guessed;
 }
 
-/* Function to check if the score of the picked cards from the array */
+/* FUNCTION_TO_CHECK_IF_THE_SCORE_OF_THE_PICKED_CARDS_FROM_THE_ARRAY */
 function checkScore(pickedCards){
     if(!gameStarted){
         return false;
@@ -167,6 +169,7 @@ function updateScoreboard(){
     fail.textContent = scores.fail;
 }
 
+/*FUNCTIONS_THAT_ALLOWS_THE_USER_TO_ALWAYS_RESET_THE_GAME_AT_ANYTIME, BY_RESETTING_THE_INNER_HTML_OF_THE_GAME_AREA*/
 function resetGame(){
     gameArea.innerHTML = "";
 

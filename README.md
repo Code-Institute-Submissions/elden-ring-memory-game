@@ -11,11 +11,11 @@ Being primarily inspired by the games from "**_From Software_**", I personalized
 
 - __Fourteen clickable cards__
 
-  - The square game-board is made up of a total of 14 cards that will flip 180° when clicked.
+  - The square game-board is made up of a total of 10 cards that will flip 180° when clicked.
   - The front face of each card is representing a character in the official "_**Elden Ring**_" game.
   - The back face of all cards is the same, depicting the logo of the original game "_**Elden Ring**_". 
 
-
+Ps: the images are aligned intentionally as follows for the purpose of the screenshot.
 ![FrontFace](assets/images/docs/card_front.png)
 
 
