@@ -1,10 +1,10 @@
 /* The cards will be generated from an array of figures */
 const cardFigures = [
-    "/assets/images/cards/alexander.jpg",
-    "/assets/images/cards/melina.jpg",
-    "/assets/images/cards/queen-marika.jpg",
-    "/assets/images/cards/ranni.jpg",
-    "/assets/images/cards/radagon.jpg",
+    "./images/cards/alexander.jpg",
+    "./images/cards/melina.jpg",
+    "./images/cards/queen-marika.jpg",
+    "./images/cards/ranni.jpg",
+    "./images/cards/radagon.jpg",
 ];
 
 
