@@ -11,48 +11,46 @@ Being primarily inspired by the games from "**_From Software_**", I personalized
 
 - __Ten clickable cards__
 
-  - The square game-board is made up of a total of 10 cards that will flip 180° when clicked.
+  - The square game board is made up of a total of 10 cards that will flip sides when clicked.
   - The front face of each card is representing a character in the official "_**Elden Ring**_" game.
   - The back face of all cards is the same, depicting the logo of the original game "_**Elden Ring**_". 
 
 Ps: the images are aligned intentionally as follows for the purpose of the screenshot.
 ![FrontFace](assets/images/docs/card_front.png)
 
-
 If all matches are made, the game board will display that the player has won the game.
 The "_**Reset**_" button is always clickable at anytime during the game, as well as the "_**Rules**_" button.
 
 ![PartialPlay](assets/images/docs/partial_play.png)
 
-
-If no match is found, both cards will flip back over and remain clickable for future guesses, also if the player keeps guessing the wrong card, the game will end, and the game board will display that the player has lost the game.
+If no match is found, both cards will flip back over and remain clickable for future guesses.
+If the player keeps guessing the wrong card, the game will end, and the game board will display that the player has lost the game.
 ![PartialPlayDefeat](assets/images/docs/partial_play_defeat.png)
-
 ---
 
 - __Two clickable buttons__
 
   - "_**Reset**_" Button - The reset button will flip all cards back over so the back face / cover of the card is showing. The cards will be then randomized and the two counters will be reset to zero.
-  - "_**Rules**_" Button - When the rules button is clicked, a responsive message will appear with the rules and the benefits of the game. To return to the game-board and play the game, the player will need to click the "_**Hide**_" button.
+  - "_**Rules**_" Button - When the rules button is clicked, a responsive message will appear with the rules and the benefits of the game. To return to the game board and play the game, the player will need to click the "_**Hide**_" button.
 
 ![ResetRulesButtons](assets/images/docs/reset_rules_button.png)
 
 - __Modal window__
 - Once the game is loaded correctly, a modal window will show up to announce the rules of the game as well as the benefits of playing it.
-- The modal window can be closed by clicking on the "_**Hide**_" Button or just by clicking  to the "_**Start**_" Button
+- The modal window can be closed by clicking on the "_**Hide**_" Button or just by clicking  to the "_**Start**_" Button, which will start the game.
 
 ![Rules](assets/images/docs/rules.png)
 
 
 ### Features Left to Implement
 
-- Adding some sound effects to each card when the card is flipped and there is a match and when there is not, plus a background music to indicate that the game has started.
+- Adding sound effects.
 
-- Animation effect when the player wins / lose.
+- Adding animation effects.
 
 - To further increase difficulty, levels could be incorporated to encourage older or more advanced users to play by adding two or four more pairs, the game could take on a higher skill level.
 
-- A timer could also clock the player's score, encouraging the player to beat their time in each round.
+- A timer could also help the players to improve their current score, encouraging the players to beat their time in each round.
 
 - Incorporating a "high scores" page would increase interest in the game.
 
@@ -60,18 +58,17 @@ If no match is found, both cards will flip back over and remain clickable for fu
 ### Bugs Encountered
 
 - To my knowledge there are no major unfixed bugs. The game run and does exactly what it is supposed to do.
-- I initially encountered a problem in showing the images on GitHub pages, although they were perfectly displayed on localhost, they still couldn't be seen and the cards were left totally blank.
-I then address the problem just by playing with the file path inside my array of cards created in JavaScript, and it worked.
+- I initially encountered a problem in showing the images on GitHub pages, although they were perfectly displayed on localhost, they still couldn't be seen live on GitHub, and therefore the cards were left totally blank.
+I then addressed this issue just by playing with the file path inside my array of cards created in JavaScript, and it worked.
 
+#### Unresolved issues
 
-#### Unresolved issue
-
-- When trying to shrink the game window manually to other dimensions, the design might look like broken.
+- When trying to shrink the game window manually to another dimension, the design might look like broken.
 In order to resolve this problem, simply click the "_**Reset**_" button on the bottom of the page.
 If the problem still persists, refresh the page at the desired responsive dimension.
-- Since the card's images are generated as background images and placed in a "Button" tag, inserting the alt attribute cannot be an option as it is not supported by such a tag. 
+- Since the card's image is generated as a background image and placed in a "Button" tag, inserting the alt attribute cannot be an option as it is not supported by such a tag.
 - It is however, highly suggested to click the "_**Reset**_" button everytime the user wishes to go on a different screen size.
-- If the user speeds up the clicking time of each card, this can break the flow, so at that point, it is also suggested to Reset the game and start over again.
+- If the user speeds up the clicking time of each card, this can break the flow. It is suggested to reset the game and start over again.
 
 
 ## Testing
@@ -83,7 +80,6 @@ If the problem still persists, refresh the page at the desired responsive dimens
 
 Homepage (desktop)
 ![Lighthouse](assets/images/docs/lighthouse_test_desktop.jpg)
-
 
 Homepage (mobile)
 ![Lighthouse](assets/images/docs/lighthouse_test_mobile.jpg)
@@ -98,7 +94,7 @@ Homepage (mobile)
 ---
 
 #### CSS - test result
-- The only error found during the validation, has to do with the fact that I used CSS variables in my code. Overall there are no mayor warnings when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/)
+- The only error found during the validation, has to do with the fact that I have used CSS variables in my code. Overall there are no mayor warnings when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/)
 
 ![ValidatorCSS](assets/images/docs/css_test.jpg)
 
@@ -109,7 +105,6 @@ Homepage (mobile)
   - No errors were found in the JavaScript file when it was run through the [(JShint) validator](https://jshint.com/) but there were warnings, an excerpt of which is shown in the first screenshot below.
 
 ![ValidatorWarningJS](assets/images/docs/js_warnings.png)
-
 
 ---
 
@@ -145,7 +140,6 @@ To make a copy or ‘fork’ the repository
 ![Clonging Process image](assets/images/docs/clone_image.jpg)
 
 ---
----
 ## Credits
 
 ### Content
@@ -158,7 +152,7 @@ To make a copy or ‘fork’ the repository
 
 - Information for the landing page overlay, "Benefits of the game" was taken from the [Walnut Montessori-Preschool Academy](https://www.walnutmontessori-preschool.com/why-kids-should-play-memory) website.
 
-- Feedback and comments from the reviewer of my PP1 were taken into account for this project when running tests and identifying and fixing bugs.
+- Feedback and comments from the reviewer of my portfolio project number 1 were taken into account for this project when running tests and identifying and fixing bugs.
 
 - The pictures used for the cards were taken from the official Elden Ring Wiki - [eldenring.wiki.fextralife.com](https://eldenring.wiki.fextralife.com/Elden+Ring+Wiki)
 
