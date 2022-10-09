@@ -42,6 +42,7 @@ const rulesModal = document.getElementById('rules');
 /* FUNCTION_TO_CREATE_A_SINGLE_CARD */
 function createCard(){
     const card = document.createElement('button');
+    
     card.classList.add('game-card', 'covered');
 
     card.addEventListener('click', function(){

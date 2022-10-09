@@ -1,7 +1,7 @@
 # Elden Ring Memory Game
 
 The Elden Ring memory game is inspired by its original version of the game called "_**Elden Ring**_" developed from "**_From Software_**", therefore all rights go to the video game development company. The concept of this game is designed for children but fun for all ages.
-The game is composed of cards which make up the game-board where the player will play.
+The game is composed of cards which make up the game board where the player will play.
 Using cognitive memory skills, the player flips the cards until all the matches are found.
 Being primarily inspired by the games from "**_From Software_**", I personalized the memory by adding the chance to lose the game when a certain amount of fails is reached.
 
@@ -9,7 +9,7 @@ Being primarily inspired by the games from "**_From Software_**", I personalized
 
 ## Features
 
-- __Fourteen clickable cards__
+- __Ten clickable cards__
 
   - The square game-board is made up of a total of 10 cards that will flip 180° when clicked.
   - The front face of each card is representing a character in the official "_**Elden Ring**_" game.
@@ -46,7 +46,7 @@ If no match is found, both cards will flip back over and remain clickable for fu
 
 - Animation effect when the player wins / lose.
 
-- To further increase difficulty, levels could be incorporated to encourage older or more advanced users to play. By adding two or four more pairs, the game could take on a higher skill level.
+- To further increase difficulty, levels could be incorporated to encourage older or more advanced users to play by adding two or four more pairs, the game could take on a higher skill level.
 
 - A timer could also clock the player's score, encouraging the player to beat their time in each round.
 
@@ -63,14 +63,16 @@ I then address the problem just by playing with the file path inside my array of
 #### Unresolved issue
 
 - When trying to shrink the game window manually to other dimensions, the design might look like broken.
-In order to resolve this problem, simply click the - "_**Reset**_" button on the bottom of the page.
-If the problem still persists, refresh the page at the desired responsive dimension. 
-
+In order to resolve this problem, simply click the "_**Reset**_" button on the bottom of the page.
+If the problem still persists, refresh the page at the desired responsive dimension.
+- Since the card's images are generated as background images and placed in a "Button" tag, inserting the alt attribute cannot be an option as it is not supported by such a tag. 
+- It is however, highly suggested to click the "_**Reset**_" button everytime the user wishes to go on a different screen size.
+- If the user speeds up the clicking time of each card, this can break the flow, so at that point, it is also suggested to Reset the game and start over again.
 
 
 ## Testing
-- The website itself was tested on Chrome, Safari and Firefox web browsers using a laptop computer. It was also designed to be responsive on a range of devices, using the Responsive setting on Chrome DevTools to simulate sizes.
 
+- The website itself was tested on Chrome, Safari and Firefox web browsers using a laptop computer. It was also designed to be responsive on a range of devices, using the Responsive setting on Chrome DevTools to simulate sizes.
 - To complete my testing phase, I ran it through Lighthouse in Chrome DevTools, both desktop, and mobile versions.
 - Due to some Google Chrome extensions, the tests were performed in Incognito Mode.
   The results are below:
@@ -152,7 +154,7 @@ To make a copy or ‘fork’ the repository
 
 - Information for the landing page overlay, "Benefits of the game" was taken from the [Walnut Montessori-Preschool Academy](https://www.walnutmontessori-preschool.com/why-kids-should-play-memory) website.
 
-- Feedback and comments from the reviewer of my PP1 were taken into account for this project when running tests and identifying and fixing bugs.
+- Feedback and comments from the reviewer of my first project were taken into account for this project when running tests and identifying and fixing bugs.
 
 - The pictures used for the cards were taken from the official Elden Ring Wiki - [eldenring.wiki.fextralife.com](https://eldenring.wiki.fextralife.com/Elden+Ring+Wiki)
 
