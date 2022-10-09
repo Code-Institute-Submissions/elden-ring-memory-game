@@ -154,7 +154,7 @@ To make a copy or ‘fork’ the repository
 
 - Information for the landing page overlay, "Benefits of the game" was taken from the [Walnut Montessori-Preschool Academy](https://www.walnutmontessori-preschool.com/why-kids-should-play-memory) website.
 
-- Feedback and comments from the reviewer of my first project were taken into account for this project when running tests and identifying and fixing bugs.
+- Feedback and comments from the reviewer of my PP1 were taken into account for this project when running tests and identifying and fixing bugs.
 
 - The pictures used for the cards were taken from the official Elden Ring Wiki - [eldenring.wiki.fextralife.com](https://eldenring.wiki.fextralife.com/Elden+Ring+Wiki)
 
