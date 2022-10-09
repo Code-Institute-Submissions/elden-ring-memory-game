@@ -37,6 +37,10 @@ If no match is found, both cards will flip back over and remain clickable for fu
 
 ![ResetRulesButtons](assets/images/docs/reset_rules_button.png)
 
+- __Modal window__
+- Once the game is loaded correctly, a modal window will show up to announce the rules of the game as well as the benefits of playing it.
+- The modal window can be closed by clicking on the "_**Hide**_" Button or just by clicking  to the "_**Start**_" Button
+
 ![Rules](assets/images/docs/rules.png)
 
 
