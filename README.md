@@ -25,6 +25,7 @@ The "_**Reset**_" button is always clickable at anytime during the game, as well
 
 If no match is found, both cards will flip back over and remain clickable for future guesses.
 If the player keeps guessing the wrong card, the game will end, and the game board will display that the player has lost the game.
+
 ![PartialPlayDefeat](assets/images/docs/partial_play_defeat.png)
 ---
 
